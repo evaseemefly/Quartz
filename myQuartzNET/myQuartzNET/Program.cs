@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using myQuartzNET.exampleExt;
 
 namespace myQuartzNET
 {
@@ -13,6 +14,10 @@ namespace myQuartzNET
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(DateTime.Now.ToString("r"));
+
+            QuartzTest1();
+
             // Grab the Scheduler instance from the Factory 
             IScheduler scheduler = StdSchedulerFactory.GetDefaultScheduler();
 
@@ -26,16 +31,25 @@ namespace myQuartzNET
             scheduler.Shutdown();
         }
 
-        public void QuartzTest1()
+        static void QuartzTest1()
         {
-            
-            //ISchedulerFactory schedFact = new StdSchedulerFactory();
+            //1 创建调度池
+            ISchedulerFactory schedFact = new StdSchedulerFactory();
+            IScheduler sched = schedFact.GetScheduler();
 
-            
-            //IScheduler sched = schedFact.GetScheduler();
-            //sched.Start();
+            //2 创建具体的作业
+            IJobDetail job = JobBuilder.Create<JobDemo>().Build();
 
-            //IJobDetail job=JobBuilder.Create<HelloJob>()
+            //3 创建并配置一个触发器
+            ISimpleTrigger trigger = (ISimpleTrigger)TriggerBuilder.Create().WithSimpleSchedule(x => x.WithIntervalInSeconds(3).WithRepeatCount(int.MaxValue)).Build();
+
+            //4 加入作业调度池中
+            sched.ScheduleJob(job, trigger);
+
+            //5 开始运行
+            sched.Start();
+
+            Console.ReadKey();
         }
     }
 }
