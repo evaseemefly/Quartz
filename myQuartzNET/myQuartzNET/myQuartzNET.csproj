@@ -56,6 +56,11 @@
   <ItemGroup>
     <Compile Include="example1\HelloJob.cs" />
     <Compile Include="example1\SimpleExample.cs" />
+    <Compile Include="example3\DumbJob.cs" />
+    <Compile Include="example3\DumbJobByFactory.cs" />
+    <Compile Include="example3\DumbJobExt.cs" />
+    <Compile Include="example3\HelloJob.cs" />
+    <Compile Include="example3\SimpleExample.cs" />
     <Compile Include="exampleExt\JobDemo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
