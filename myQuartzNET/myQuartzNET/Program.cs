@@ -16,19 +16,22 @@ namespace myQuartzNET
         {
             Console.WriteLine(DateTime.Now.ToString("r"));
 
-            QuartzTest1();
+            //QuartzTest1();
+
+            example4.SimpleExample example = new example4.SimpleExample();
+            example.Run();
 
             // Grab the Scheduler instance from the Factory 
-            IScheduler scheduler = StdSchedulerFactory.GetDefaultScheduler();
+            //IScheduler scheduler = StdSchedulerFactory.GetDefaultScheduler();
 
-            // and start it off
-            scheduler.Start();
+            //// and start it off
+            //scheduler.Start();
 
-            // some sleep to show what's happening
-            Thread.Sleep(TimeSpan.FromSeconds(60));
+            //// some sleep to show what's happening
+            //Thread.Sleep(TimeSpan.FromSeconds(60));
 
-            // and last shut down the scheduler when you are ready to close your program
-            scheduler.Shutdown();
+            //// and last shut down the scheduler when you are ready to close your program
+            //scheduler.Shutdown();
         }
 
         static void QuartzTest1()

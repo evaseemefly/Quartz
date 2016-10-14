@@ -22,7 +22,7 @@ namespace myQuartzNET.example3
 
             //2 创建计时器
             ITrigger trigger = TriggerBuilder.Create()
-                                             .WithIdentity("myTrigger", "group1")
+                                             .WithIdentity("myJobTrigger", "group1")
                                              .StartNow()
                                              .WithSimpleSchedule(x => x.WithIntervalInSeconds(40)
                                              .RepeatForever())
