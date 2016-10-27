@@ -18,7 +18,11 @@ namespace myQuartzNET
 
             //QuartzTest1();
 
-            example4.SimpleExample example = new example4.SimpleExample();
+            //example4.SimpleExample example = new example4.SimpleExample();
+            //example.Run();
+
+
+            exampleDb.SimpleExample example = new exampleDb.SimpleExample();
             example.Run();
 
             // Grab the Scheduler instance from the Factory 

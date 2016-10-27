@@ -63,6 +63,8 @@
     <Compile Include="example3\SimpleExample.cs" />
     <Compile Include="example4\HelloJob.cs" />
     <Compile Include="example4\SimpleExample.cs" />
+    <Compile Include="exampleDb\HelloJob.cs" />
+    <Compile Include="exampleDb\SimpleExample.cs" />
     <Compile Include="exampleExt\JobDemo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
