@@ -18,9 +18,12 @@ namespace myQuartzNET
 
             //QuartzTest1();
 
-            example1.SimpleExample example1 = new myQuartzNET.example1.SimpleExample();
+            //example1.SimpleExample example1 = new myQuartzNET.example1.SimpleExample();
 
-            example1.Run();
+            exampleDb.SimpleExample example = new exampleDb.SimpleExample();
+            example.Run();
+            //example.ResumeJob("testname", "testgroup");
+            //example1.Run();
 
             //example4.SimpleExample example = new example4.SimpleExample();
             //example.Run();
@@ -48,7 +51,10 @@ namespace myQuartzNET
             IJobDetail job = JobBuilder.Create<JobDemo>().Build();
 
             //3 创建并配置一个触发器
-            ISimpleTrigger trigger = (ISimpleTrigger)TriggerBuilder.Create().WithSimpleSchedule(x => x.WithIntervalInSeconds(3).WithRepeatCount(int.MaxValue)).Build();
+            ISimpleTrigger trigger = (ISimpleTrigger)TriggerBuilder.Create()
+                .WithSimpleSchedule(x => x.WithIntervalInSeconds(3)
+                .WithRepeatCount(int.MaxValue))
+                .Build();
 
             //4 加入作业调度池中
             sched.ScheduleJob(job, trigger);
