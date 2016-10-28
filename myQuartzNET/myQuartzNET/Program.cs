@@ -18,8 +18,12 @@ namespace myQuartzNET
 
             //QuartzTest1();
 
-            example4.SimpleExample example = new example4.SimpleExample();
-            example.Run();
+            example1.SimpleExample example1 = new myQuartzNET.example1.SimpleExample();
+
+            example1.Run();
+
+            //example4.SimpleExample example = new example4.SimpleExample();
+            //example.Run();
 
             // Grab the Scheduler instance from the Factory 
             //IScheduler scheduler = StdSchedulerFactory.GetDefaultScheduler();

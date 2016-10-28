@@ -36,6 +36,8 @@ namespace myQuartzNET.example1
               .Build();
 
             sched.ScheduleJob(job, trigger);
+
+            sched.Start();
         }
     }
 }
