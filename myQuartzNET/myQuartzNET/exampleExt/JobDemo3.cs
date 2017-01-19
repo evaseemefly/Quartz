@@ -1,19 +1,16 @@
-﻿using Quartz;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
-
 
 namespace myQuartzNET.exampleExt
 {
-    public class JobDemo:BaseJobDemo
+    public class JobDemo3:BaseJobDemo
     {
         public override void ForegroundColor()
         {
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.ForegroundColor = ConsoleColor.DarkRed;
         }
     }
 }

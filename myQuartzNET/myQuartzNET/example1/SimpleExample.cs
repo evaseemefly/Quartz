@@ -31,8 +31,9 @@ namespace myQuartzNET.example1
               .WithIdentity("myTrigger", "group1")
               .StartNow()
               .WithSimpleSchedule(x => x
-                  .WithIntervalInSeconds(40)
-                  .RepeatForever())
+                  .WithIntervalInSeconds(2)
+                  //.RepeatForever())
+                  .WithRepeatCount(2))
               .Build();
 
             sched.ScheduleJob(job, trigger);
